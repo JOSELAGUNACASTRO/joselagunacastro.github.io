@@ -190,15 +190,15 @@
     function checkAnswer(selectedAnswer) {
       const currentQuestion = questions[currentQuestionIndex];
       if (selectedAnswer === currentQuestion.correctAnswer) {
-        feedbackElement.textContent = "¡Correcto!";
+        feedbackElement.textContent = "¡CORRECTO!";
       } else {
-        feedbackElement.textContent = "Incorrecto. La respuesta correcta es: " + currentQuestion.correctAnswer;
+        feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
       }
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
-        setTimeout(displayQuestion, 1500); // Mostrar la siguiente pregunta después de 1.5 segundos
+        setTimeout(displayQuestion, 2500); // Mostrar la siguiente pregunta después de 1.5 segundos
       } else {
-        feedbackElement.textContent = "¡Fin del juego!";
+        feedbackElement.textContent = "¡FIN DE JUEGO!";
       }
     }
 
