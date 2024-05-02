@@ -8,6 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+    <p id="contador">0</p>
     }
     .question {
       font-size: 25px;
@@ -192,7 +193,8 @@
       const currentQuestion = questions[currentQuestionIndex];
       if (selectedAnswer === currentQuestion.correctAnswer) {
         feedbackElement.textContent = "¡CORRECTO!";
-        contadorvalor++;
+        contador++;
+         document.getElementById("contador").innerText = contador;
       } else {
         feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
       }
