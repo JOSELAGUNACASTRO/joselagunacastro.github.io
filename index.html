@@ -34,7 +34,6 @@
   <div class="question" id="question"></div>
   <div class="options" id="options"></div>
   <div class="feedback" id="feedback"></div>
-    <p id="contadorRespuestas"></p>
 
   <script>
     const questions = [
@@ -187,23 +186,11 @@
       });
       feedbackElement.textContent = '';
     }
-   
-     // Función para reiniciar el contador
-        function reiniciarContador() {
-            contadorRespuestas = 0;
-            actualizarContador();
-        }
-      // Función para actualizar el contador en la página
-        function actualizarContador() {
-            var contadorElemento = document.getElementById("contador");
-            contadorElemento.textContent = contadorRespuestas;
-        }
 
     function checkAnswer(selectedAnswer) {
       const currentQuestion = questions[currentQuestionIndex];
       if (selectedAnswer === currentQuestion.correctAnswer) {
         feedbackElement.textContent = "¡CORRECTO!";
-       contadorRespuestas++;
       } else {
         feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
       }
