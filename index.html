@@ -34,6 +34,7 @@
   <div class="question" id="question"></div>
   <div class="options" id="options"></div>
   <div class="feedback" id="feedback"></div>
+  contadorValor=0;
 
   <script>
     const questions = [
@@ -191,6 +192,7 @@
       const currentQuestion = questions[currentQuestionIndex];
       if (selectedAnswer === currentQuestion.correctAnswer) {
         feedbackElement.textContent = "¡CORRECTO!";
+        contadorvalor++;
       } else {
         feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
       }
