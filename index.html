@@ -193,8 +193,8 @@
       const currentQuestion = questions[currentQuestionIndex];
       if (selectedAnswer === currentQuestion.correctAnswer) {
         feedbackElement.textContent = "¡CORRECTO!";
-        contador++;
-         document.getElementById("contador").innerText = contador;
+        contadorvalor++;
+         document.getElementById("contadorvalor").innerText = contadorvalor;
       } else {
         feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
       }
