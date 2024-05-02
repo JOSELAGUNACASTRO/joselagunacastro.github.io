@@ -1,26 +1,91 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página sobre Fortnite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Trivia de Ciencia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .options button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .feedback {
+      margin-top: 20px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-    <h1>Bienvenido a mi página sobre Fortnite</h1>
-   
-    <!-- Botones -->
-    <button onclick="location.href='https://www.epicgames.com/fortnite/es-ES/home'" type="button">Sitio oficial de Fortnite</button>
-    <button onclick="location.href='https://www.twitch.tv/directory/game/Fortnite'" type="button">Twitch - Fortnite</button>
-   
-    <!-- Imágenes -->
-    <img src="fortnite_logo.png" alt="Logo de Fortnite" width="200" height="100">
-    <img src="fortnite_screenshot.jpg" alt="Captura de pantalla de Fortnite" width="400" height="200">
-   
-    <!-- Enlaces -->
-    <p>¡Descarga Fortnite gratis!</p>
-    <a href="https://www.epicgames.com/fortnite/es-ES/download" target="_blank">Descargar Fortnite</a>
-   
-    <p>Mira los últimos tráilers de Fortnite:</p>
-    <a href="https://www.youtube.com/user/FortniteGame" target="_blank">YouTube - Fortnite</a>
+  <h1>Juego de Trivia de Ciencia</h1>
+  <div class="question" id="question"></div>
+  <div class="options" id="options"></div>
+  <div class="feedback" id="feedback"></div>
+
+  <script>
+    const questions = [
+      {
+        question: "¿Cuál es el proceso por el cual las plantas convierten la luz solar en energía?",
+        options: ["Fotosíntesis", "Respiración", "Digestión", "Transpiración"],
+        correctAnswer: "Fotosíntesis"
+      },
+      {
+        question: "¿Qué planeta es conocido como el 'Planeta Rojo'?",
+        options: ["Tierra", "Júpiter", "Marte", "Venus"],
+        correctAnswer: "Marte"
+      },
+      {
+        question: "¿Cuál es la unidad básica de la estructura de los seres vivos?",
+        options: ["Célula", "Átomo", "Molécula", "Tejido"],
+        correctAnswer: "Célula"
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const feedbackElement = document.getElementById('feedback');
+
+    function displayQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      questionElement.textContent = currentQuestion.question;
+      optionsElement.innerHTML = '';
+      currentQuestion.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.addEventListener('click', () => checkAnswer(option));
+        optionsElement.appendChild(button);
+      });
+      feedbackElement.textContent = '';
+    }
+
+    function checkAnswer(selectedAnswer) {
+      const currentQuestion = questions[currentQuestionIndex];
+      if (selectedAnswer === currentQuestion.correctAnswer) {
+        feedbackElement.textContent = "¡Correcto!";
+      } else {
+        feedbackElement.textContent = "Incorrecto. La respuesta correcta es: " + currentQuestion.correctAnswer;
+      }
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        setTimeout(displayQuestion, 1500); // Mostrar la siguiente pregunta después de 1.5 segundos
+      } else {
+        feedbackElement.textContent = "¡Fin del juego!";
+      }
+    }
+
+    displayQuestion(); // Mostrar la primera pregunta al cargar la página
+  </script>
 </body>
 </html>
+```
