@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JUEGO CIENCIAS SOCIALES</title>
   <figure>
-  <h1>¿QUIEN FUE RAMON PEREZ DE AYALA? por JAVIER LAGUNA 2024</h1>
-  <img src="https://i.pinimg.com/originals/3f/a6/ed/3fa6ed562a9f3cf49c7aecb0f7172981.jpg" hight="10%" height="10%" alt="">
+ <img src="https://i.pinimg.com/originals/3f/a6/ed/3fa6ed562a9f3cf49c7aecb0f7172981.jpg" hight="10%" height="10%" alt="">
   </figure>
   <style>
     body {
@@ -230,11 +229,11 @@
       if (selectedAnswer === currentQuestion.correctAnswer) {
         feedbackElement.textContent = "¡CORRECTO!";
       } else {
-        feedbackElement.textContent = "INCORRECTO. La respuesta correcta es: " + currentQuestion.correctAnswer;
+        feedbackElement.textContent = "INCORRECTO. LA RESPUESTA CORRECTA ES: " + currentQuestion.correctAnswer;
       }
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
-        setTimeout(displayQuestion, 2500); // Mostrar la siguiente pregunta después de 1.5 segundos
+        setTimeout(displayQuestion, 3500); // Mostrar la siguiente pregunta después de 1.5 segundos
       } else {
         feedbackElement.textContent = "¡FIN DE JUEGO!";
       }
